@@ -1,0 +1,266 @@
+/* Ivey Minimal Theme + Top-Right Logo + Bottom-Right Controls + Minute Clock
+   File: ivey-theme.css
+*/
+
+/* ===== Brand & System Tokens ===== */
+:root{
+  /* Brand palette
+     Headings/links: Pantone 3308  → #034638
+     Bullets/markers: Pantone 268  → #582C83
+     Secondary text: Cool Grey 7   → #97999B
+  */
+  --brand-primary: #582C83;  /* headings & links */
+  --brand-accent:  #582C83;  /* bullets/markers */
+  --muted:         #97999B;  /* secondary text */
+
+  /* Text & surfaces */
+  --bg:#ffffff;            /* background */
+  --fg:#000000;            /* main text */
+  --code-bg:#f6f8fa;       /* code surface */
+
+  /* Fonts */
+  --font-sans: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+
+  /* Logo (top-right) */
+  --logo-top: 12px;
+  --logo-right: 18px;
+  --logo-width: 120px;
+  --logo-height: 32px;
+  --logo-url: url("../images/logo.png"); /* shared logo */
+
+  /* Clock (top-left) — seconds suppressed in JS */
+  --clock-top: 12px;
+  --clock-left: 22px;
+  --clock-bg: rgba(255,255,255,.85);
+  --clock-fg: #111315;
+  --clock-radius: 10px;
+  --clock-padding: 6px 10px;
+  --clock-shadow: 0 2px 10px rgba(0,0,0,.05);
+  --clock-font: 14px/1 var(--font-sans);
+
+  /* Footer text */
+  --footer-text: "Ivey Business School • A. Riofrío-Lara";
+}
+
+/* Optional back-compat with older token names */
+:root{
+  --utpl-blue:   var(--brand-primary);
+  --utpl-yellow: var(--brand-accent);
+}
+
+/* ===== Typography ===== */
+.reveal,
+.reveal p,
+.reveal li,
+.reveal h1, .reveal h2, .reveal h3,
+.reveal h4, .reveal h5, .reveal h6,
+.reveal blockquote,
+.reveal table, .reveal th, .reveal td,
+.reveal small, .reveal figcaption {
+  font-family: var(--font-sans) !important;
+  color: var(--fg);
+}
+
+/* Body text justification (keep code/math left-aligned) */
+.reveal p,
+.reveal li,
+.reveal blockquote,
+.reveal table td,
+.reveal figcaption,
+.reveal small {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+}
+.reveal pre,
+.reveal code,
+.reveal kbd,
+.reveal samp,
+.reveal .katex,
+.reveal .MathJax,
+.reveal .math {
+  text-align: left;
+  hyphens: none;
+}
+
+.reveal code, .reveal pre, .reveal kbd, .reveal samp {
+  font-family: var(--font-mono) !important;
+}
+
+/* ===== Base ===== */
+.reveal .slides{ background:var(--bg); }
+.reveal h1{ font-weight:800; letter-spacing:.01em; }
+.reveal h2{ font-weight:700; }
+.reveal h3{ font-weight:600; }
+
+/* Headings in brand primary */
+.reveal h1, .reveal h2, .reveal h3 { color: var(--brand-primary); }
+
+/* Links use brand primary */
+.reveal a{
+  color: var(--brand-primary);
+  text-decoration:none;
+  border-bottom:2px solid color-mix(in srgb, var(--brand-primary) 45%, transparent);
+}
+.reveal a:hover{ border-bottom-color: var(--brand-primary); }
+
+/* Lists & spacing */
+.reveal ul, .reveal ol{ margin-block:.6em .2em; }
+.reveal li{ margin:.18em 0; }
+
+/* Bullet/number markers in brand accent; text remains main color */
+.reveal ul li::marker,
+.reveal ol li::marker { color: var(--brand-accent); }
+
+/* Code blocks */
+.reveal pre code{
+  background:var(--code-bg);
+  display:block;
+  padding:.8em 1em;
+  border-radius:8px;
+  line-height:1.35;
+  color:#1a1a1a; /* subtle contrast vs. body text */
+}
+
+/* ===== Helpers ===== */
+
+/* Title slide */
+.reveal .title-slide{
+  display: grid;
+  place-content: center;
+  min-height: 100%;
+  text-align: center;
+}
+
+/* Big, readable main title (moderate scale + width cap) */
+.reveal .title-slide h1{
+  color: #111827 !important;                /* near-black for the hero title */
+  font-weight: 150;
+  font-size: clamp(48px, 6.5vw, 96px);      /* tuned from earlier oversized value */
+  line-height: 1.08;
+  letter-spacing: -0.005em;
+  margin: .1em auto .35em;
+  max-width: 20ch;                          /* prevent ultra-wide lines */
+  text-align: center;
+}
+
+/* Subtitle under the big title */
+.reveal .title-slide .subtitle{
+  display: block;
+  font-size: clamp(14px, 1.4vw, 20px);
+  color: var(--muted);
+  font-weight: 400;
+  margin: 0 0 1.8rem;
+}
+
+/* Optional midtitle helper (unused by default) */
+.reveal .title-slide .midtitle {
+  font-size: 2.4em;
+  font-weight: 800;
+  letter-spacing: .01em;
+  margin: 0 0 .25em 0;
+  color: var(--brand-primary);
+}
+
+/* Secondary/muted text (captions, notes, etc.) */
+.reveal .slides .muted,
+.reveal figcaption,
+.reveal small,
+.reveal .notes,
+.reveal .footer,
+.reveal .byline {
+  color: var(--muted) !important;
+}
+
+/* Two-column layout */
+.reveal .cols{ display:grid; grid-template-columns:1fr 1fr; gap:28px; align-items:start; }
+@media (max-width:1080px){ .reveal .cols{ grid-template-columns:1fr; } }
+
+/* Footer text (bottom-left) */
+.reveal .slides::after{
+  content: var(--footer-text);
+  position:fixed;
+  left:24px;
+  bottom:24px; /* controls are bottom-right */
+  font-size:14px;
+  color:var(--muted);
+  z-index: 9997;
+  right:96px;  /* avoid overlap with controls on small screens */
+}
+
+/* ===== Logo (top-right on every slide) ===== */
+.reveal .slides::before{
+  content:"";
+  position: fixed;
+  top: var(--logo-top);
+  right: var(--logo-right);
+  width: var(--logo-width);
+  height: var(--logo-height);
+  background: var(--logo-url) right/contain no-repeat;
+  opacity: .95;
+  z-index: 9998;
+  pointer-events: none;
+}
+
+/* ===== On-slide Clock (requires shared/js/clock.js; minutes only now) ===== */
+.utpl-clock{
+  position: fixed;
+  top: var(--clock-top);
+  left: var(--clock-left);
+  right: auto;
+  z-index: 9999;
+  background: var(--clock-bg);
+  color: var(--clock-fg);
+  border-radius: var(--clock-radius);
+  padding: var(--clock-padding);
+  box-shadow: var(--clock-shadow);
+  font: var(--clock-font);
+  letter-spacing: .02em;
+  user-select: none;
+}
+.utpl-clock.hidden{ display:none; }
+
+/* ===== Controls bottom-right (visible) ===== */
+.reveal .controls{
+  position: fixed;
+  right: 16px;
+  left: auto !important;
+  bottom: 16px;
+  top: auto !important;
+  transform: none !important;
+  z-index: 10000; /* above logo/footer */
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* ===== Print adjustments ===== */
+@media print{
+  .reveal .slides::after{ opacity:.6; }
+  .utpl-clock{ display:none !important; }
+}
+
+/* ===== Optional Dark-Mode Surfaces (keeps brand colors) ===== */
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0b0d10;
+    --fg:#e8eaed;
+    --muted:#b7bcc1; /* slightly brighter for contrast on dark */
+    --code-bg:#1a1f24;
+    --clock-bg: rgba(20,22,26,.6);
+    --clock-fg:#e8eaed;
+  }
+  .reveal .slides{ background:var(--bg); }
+}
+
+/* === Force light mode regardless of OS setting === */
+html { color-scheme: light; }
+
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#ffffff; --fg:#000000; --muted:#97999B; --code-bg:#f6f8fa;
+    --clock-bg: rgba(255,255,255,.85); --clock-fg:#111315;
+  }
+  .reveal .slides{ background: var(--bg); }
+}

@@ -264,3 +264,22 @@ html { color-scheme: light; }
   }
   .reveal .slides{ background: var(--bg); }
 }
+
+
+/* Center slide content on both axes and keep images contained */
+.center-xy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.center-xy img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* NEW: space between the line title and the image */
+.reveal p + .center-xy {   /* selects the .center-xy that follows a paragraph (your bold title) */
+  margin-top: 0.8rem;      /* tweak to taste: 0.6–1.2rem works well */
+}

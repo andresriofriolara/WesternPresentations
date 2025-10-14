@@ -48,20 +48,23 @@
 --
 
 **Cost & savings by hedge (pick CHF-only)**
-![Annual Fixed vs Unhedged Floating Cost — True Annual Savings](./images/graph11.png)
-<!-- .element: class="r-stretch" -->
+<div class="center-xy">
+  <img src="./images/graph11.png" alt="Annual Fixed vs Unhedged Floating Cost — True Annual Savings">
+</div>
 
 --
 
 **Covenant protection — DSCR paths (swap vs float)**
-![Debt Service Coverage Ratio — FLOAT vs SWAP (Covenant 1.0×)](./images/graph14.png)
-<!-- .element: class="r-stretch" -->
+<div class="center-xy">
+  <img src="./images/graph14.png" alt="Debt Service Coverage Ratio — FLOAT vs SWAP (Covenant 1.0×)">
+</div>
 
 --
 
 **Risk check — SNB peg stress on total cost**
-![Normalized Total Funding Cost (% p.a.) — CHF Peg vs Peg-Break Stress](./images/graph10.png)
-<!-- .element: class="r-stretch" -->
+<div class="center-xy">
+  <img src="./images/graph10.png" alt="Normalized Total Funding Cost — CHF Peg vs Peg-Break Stress">
+</div>
 
 ---
 

@@ -29,14 +29,6 @@
 - **Covenants:** **DSCR ≥ 1.0×**; **Equity = Property − Loan − Swap NPV ≥ 0**.
 - **Risks:** SNB floor/peg risk, potential CHF appreciation, rent/property shocks; align debt with **tenant CHF exposure**.
 
---
-
-- Currency and Interest Rate Risk: The proposed financing structure relies heavily on foreign-currency debt (CHF/JPY), exposing the firm to potential exchange-rate fluctuations and interest-rate differentials that could significantly affect debt-service costs and equity value.
-Uncertain Effectiveness of Hedges: While the interest-rate swap and tenant hedge aim to stabilize cash flows, their partial coverage and long-term fixed terms may leave residual exposure, especially if market conditions shift (e.g., CHF peg break or rising LIBOR rates).
-- Covenant and Default Risk: The collateral requirement tied to negative equity introduces the risk of forced asset sales or liquidity strain under adverse market scenarios (FX appreciation, rent decline, or property devaluation).
-- Data and Model Limitations: Quantifying these risks requires careful use of pre-2014 historical data (LIBOR, FX, rental yields) while recognizing distortions from the 2008 crisis and structural breaks like the SNB’s 1.20 CHF/EUR floor, which complicate historical simulation and VaR analysis.
-
-
 ---
 
 ## Methods
@@ -97,6 +89,16 @@ Uncertain Effectiveness of Hedges: While the interest-rate swap and tenant hedge
 - From 2004–2014, U.K. LIBOR rates averaged 3.18%—roughly triple those of Switzerland (1.16%) and Japan (0.60%)—highlighting the clear funding-cost advantage of issuing debt in CHF or JPY.
 - Around the July 2014 deal date, actual LIBOR spreads were roughly 87 bps (GBP–CHF) and 73 bps (GBP–JPY), smaller than the memo’s assumed 125 bps and 110 bps, indicating its figures were likely based on earlier or rounded estimates.
 - Data used from Bloomberg/Capital IQ (2004–2014) includes historical daily exchange rates for GBP/CHF, GBP/JPY, and EUR/CHF, along with corresponding 1-year LIBOR rates for CHF, JPY, and GBP to analyze borrowing cost differentials and currency-hedging risk.
+
+--
+
+**Problem**
+
+- Currency and Interest Rate Risk: The proposed financing structure relies heavily on foreign-currency debt (CHF/JPY), exposing the firm to potential exchange-rate fluctuations and interest-rate differentials that could significantly affect debt-service costs and equity value.
+Uncertain Effectiveness of Hedges: While the interest-rate swap and tenant hedge aim to stabilize cash flows, their partial coverage and long-term fixed terms may leave residual exposure, especially if market conditions shift (e.g., CHF peg break or rising LIBOR rates).
+- Covenant and Default Risk: The collateral requirement tied to negative equity introduces the risk of forced asset sales or liquidity strain under adverse market scenarios (FX appreciation, rent decline, or property devaluation).
+- Data and Model Limitations: Quantifying these risks requires careful use of pre-2014 historical data (LIBOR, FX, rental yields) while recognizing distortions from the 2008 crisis and structural breaks like the SNB’s 1.20 CHF/EUR floor, which complicate historical simulation and VaR analysis.
+
 
 --
 
@@ -164,3 +166,4 @@ Note we use the last Libor in the data set as the Jan 2015 fixed cost (assumptio
 - **Preserve natural hedge:** Maintain/expand the tenant hedge that aligns CHF revenues with CHF liabilities during lease renewals
 - This structure **minimizes financing cost**, **stabilizes cash flow**, and **meets all covenant metrics**.  
 - With prudent monitoring of CHF policy and refinancing risk, the investment’s **risk–return profile** supports a **Green Light** recommendation.
+

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>CLT • Mock Class • October 17th, 2025</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Reveal core -->
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/reveal.css">
+
+  <!-- Code highlight theme -->
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/plugin/highlight/monokai.css">
+
+  <!-- Your custom theme (keeps logo path; controls bottom-left; all-sans) -->
+  <link rel="stylesheet" href="../../shared/css/western-theme.css">
+
+  <!-- Deck-specific footer override -->
+  <style>
+    :root{
+      --footer-text: "CLT • Mock Class • October 17th, 2025";
+    }
+    /* Optional: responsive images */
+    section img { max-width: 100%; height: auto; }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <!-- Markdown-powered deck -->
+      <section
+        data-markdown="slides.md"
+        data-separator="^---$"
+        data-separator-vertical="^--$"
+        data-separator-notes="^Note:"
+        data-charset="utf-8">
+      </section>
+    </div>
+  </div>
+
+  <!-- Reveal core + plugins (defer for faster paint) -->
+  <script defer src="https://unpkg.com/reveal.js/dist/reveal.js"></script>
+  <script defer src="https://unpkg.com/reveal.js/plugin/markdown/markdown.js"></script>
+  <script defer src="https://unpkg.com/reveal.js/plugin/highlight/highlight.js"></script>
+  <script defer src="https://unpkg.com/reveal.js/plugin/notes/notes.js"></script>
+  <script defer src="https://unpkg.com/reveal.js/plugin/math/math.js"></script>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      Reveal.initialize({
+        hash: true,
+        slideNumber: true,
+        controls: true,
+        controlsTutorial: true,
+        // CSS already repositions controls to bottom-left
+        progress: true,
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.MathJax3 ],
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js',
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$','$$'], ['\\[','\\]']]
+          }
+        }
+      });
+    });
+  </script>
+
+  <!-- Clock (top-left; your updated JS shows HH:MM; toggle key as in your script) -->
+  <script src="../../shared/js/clock.js"></script>
+</body>
+</html>

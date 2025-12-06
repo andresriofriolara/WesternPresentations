@@ -274,6 +274,22 @@ F-4. Average excess returns vs loading on bank-risk attention $\hat\gamma^B_p$.
 F-3. Event-time CAR paths around bank-risk attention spikes (FF3).
 </span>
 
+--
+
+## Results snapshot (H1–H4)
+
+| Block / Portfolio | $\gamma^H_p$ (t)                | $\gamma^B_p$ (t)                 | $CAR[-2,+2]$ at low $S^H$ (t) | Cross-sec price(s)                          | Takeaway |
+|-------------------|---------------------------------|----------------------------------|--------------------------------|---------------------------------------------|----------|
+| Banks             | $0.0016\ (0.27)$               | $0.0006\ (0.13)$                 | $-0.0037\ (-0.54)$             | –                                           | No strong housing- or attention-based predictability; muted CARs. |
+| Homebuilders      | $-0.0123\ (-1.34)$             | $-0.0053\ (-0.73)$               | $0.0886\ (3.22)$               | –                                           | Sign-consistent $\gamma^H_p$ and large positive CARs in low sentiment. |
+| REITs             | $-0.0009\ (-0.17)$             | $0.0019\ (0.52)$                 | $-0.0469\ (-3.67)$             | –                                           | Weak slopes but strong negative CARs in low sentiment. |
+| Cross-section     | –                               | –                                | –                              | $C_H=-0.3258\ (-0.38)$; $C_B=1.8380\ (1.68)$ | $C_H$ not priced; $C_B$ positive and borderline significant. |
+
+<span class="muted">
+$\gamma^H_p,\gamma^B_p$: baseline predictive slopes. $CAR[-2,+2]$ from spike10 events, low housing-sentiment tercile.
+</span>
+
+
 ---
 
 ## Conclusions

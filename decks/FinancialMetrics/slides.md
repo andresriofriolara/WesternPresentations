@@ -15,7 +15,7 @@
 
 --
 
-### Hypotheses (compact)
+### Hypotheses
 
 - **H1 (housing sentiment predictability):** for housing-exposed portfolios $p$, $\gamma^H_p \neq 0$.
 - **H2 (bank attention sector-specific):** $\gamma^B_{\text{banks}} \neq 0$ and $\gamma^B_{\text{non-banks}} \approx 0$.
@@ -26,8 +26,6 @@
 
 ## Motivation &amp; Contribution
 
-### Why this question?
-
 - Behavioral variables (sentiment, attention) act as *state variables* that distort or complement standard risk factors.
 - Banks are fragile and informationally opaque; housing-related equities are naturally exposed to beliefs about house prices and credit conditions.
 - Uncertainty + dispersed beliefs:
@@ -37,7 +35,7 @@
 
 --
 
-### What this paper does
+## Contribution
 
 - Embed housing sentiment $S^H_t$ and bank-risk attention $S^B_t$ in a standard linear factor-pricing framework.
 - Use sector portfolios:
@@ -138,10 +136,8 @@ $$
   S^B_{z,t} = \frac{S^B_t - \mu(S^B)}{\sigma(S^B)}.
   $$
 - Attention spike indicators:
-  $$
-  \texttt{spike10}_t = \mathbf{1}\{S^B_{z,t} \ge p90\}, \quad
-  \texttt{spike85}_t = \mathbf{1}\{S^B_{z,t} \ge p85\}.
-  $$
+  $$\texttt{spike10}_t = \mathbf{1}\{S^B_{z,t} \ge p90\}$$
+  $$\texttt{spike85}_t = \mathbf{1}\{S^B_{z,t} \ge p85\}$$
 
 --
 
@@ -227,6 +223,8 @@ $$
 - **Housing sentiment exposure:** $C_H \approx 0$ → not clearly priced.
 - **Bank-attention exposure:** $C_B > 0$, borderline significant, larger in post-2020 subsample.
 - Interpretation: some evidence that bearing bank-attention exposure is modestly rewarded, especially when bank fragility is salient.
+
+--
 
 <div class="center-xy">
   <img src="images/F_4_gamma_vs_avg_return.png"

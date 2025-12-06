@@ -154,6 +154,8 @@ $$
 
 <span class="muted">F-1. Standardized housing sentiment and bank-risk attention over time.</span>
 
+--
+
 <div class="center-xy">
   <img src="images/F_2_banks_vs_homebuilders.png"
        alt="Excess returns: Banks vs Homebuilders">
@@ -278,17 +280,52 @@ F-3. Event-time CAR paths around bank-risk attention spikes (FF3).
 
 ## Results snapshot (H1–H4)
 
-| Block / Portfolio | $\gamma^H_p$ (t)                | $\gamma^B_p$ (t)                 | $CAR[-2,+2]$ at low $S^H$ (t) | Cross-sec price(s)                          | Takeaway |
-|-------------------|---------------------------------|----------------------------------|--------------------------------|---------------------------------------------|----------|
-| Banks             | $0.0016\ (0.27)$               | $0.0006\ (0.13)$                 | $-0.0037\ (-0.54)$             | –                                           | No strong housing- or attention-based predictability; muted CARs. |
-| Homebuilders      | $-0.0123\ (-1.34)$             | $-0.0053\ (-0.73)$               | $0.0886\ (3.22)$               | –                                           | Sign-consistent $\gamma^H_p$ and large positive CARs in low sentiment. |
-| REITs             | $-0.0009\ (-0.17)$             | $0.0019\ (0.52)$                 | $-0.0469\ (-3.67)$             | –                                           | Weak slopes but strong negative CARs in low sentiment. |
-| Cross-section     | –                               | –                                | –                              | $C_H=-0.3258\ (-0.38)$; $C_B=1.8380\ (1.68)$ | $C_H$ not priced; $C_B$ positive and borderline significant. |
-
-<span class="muted">
-$\gamma^H_p,\gamma^B_p$: baseline predictive slopes. $CAR[-2,+2]$ from spike10 events, low housing-sentiment tercile.
-</span>
-
+<table style="font-size:0.9em; width:100%; border-collapse:collapse;">
+  <thead>
+    <tr>
+      <th style="text-align:left;">Block / Portfolio</th>
+      <th style="text-align:center;">$\gamma^{H}_p$ (t)</th>
+      <th style="text-align:center;">$\gamma^{B}_p$ (t)</th>
+      <th style="text-align:center;">$CAR[-2,+2]$ at low $S^H$ (t)</th>
+      <th style="text-align:center;">Cross-sec price(s)</th>
+      <th style="text-align:left;">Takeaway</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left;">Banks</td>
+      <td style="text-align:center;">0.0016 (0.27)</td>
+      <td style="text-align:center;">0.0006 (0.13)</td>
+      <td style="text-align:center;">-0.0037 (-0.54)</td>
+      <td style="text-align:center;">&mdash;</td>
+      <td style="text-align:left;">No strong housing- or attention-based predictability; muted CARs.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left;">Homebuilders</td>
+      <td style="text-align:center;">-0.0123 (-1.34)</td>
+      <td style="text-align:center;">-0.0053 (-0.73)</td>
+      <td style="text-align:center;">0.0886 (3.22)</td>
+      <td style="text-align:center;">&mdash;</td>
+      <td style="text-align:left;">Sign-consistent $\gamma^{H}_p$ and large positive CARs in low sentiment.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left;">REITs</td>
+      <td style="text-align:center;">-0.0009 (-0.17)</td>
+      <td style="text-align:center;">0.0019 (0.52)</td>
+      <td style="text-align:center;">-0.0469 (-3.67)</td>
+      <td style="text-align:center;">&mdash;</td>
+      <td style="text-align:left;">Weak slopes but strong negative CARs in low sentiment.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left;">Cross-section</td>
+      <td style="text-align:center;">&mdash;</td>
+      <td style="text-align:center;">&mdash;</td>
+      <td style="text-align:center;">&mdash;</td>
+      <td style="text-align:center;">$C_H = -0.3258\ (-0.38)$;<br>$C_B = 1.8380\ (1.68)$</td>
+      <td style="text-align:left;">$C_H$ not priced; $C_B$ positive and borderline significant.</td>
+    </tr>
+  </tbody>
+</table>
 
 ---
 
